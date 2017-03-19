@@ -12,9 +12,9 @@
 -include_lib("eunit/include/eunit.hrl").
 
 %% API
--export().
+-export([]).
 
-simple_test() -> ?assert(1 + 1 =:= 2).
-
-%%  perimeter_test() -> mod_1_24:perimeter({circle, {10}})
+bit_test() -> ?assert(mod_1_24:bits(7) =:= 3).
+bit1_test() -> ?assert(mod_1_24:bits(8) =:= 1).
+bit2_test() -> ?assert(mod_1_24:bits(1) =:= 1).
 

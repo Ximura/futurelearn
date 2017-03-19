@@ -52,3 +52,4 @@ futurelearn/futurelearn/.idea/workspace.xml
 functional-programming-erlang/.rebar/*
 functional-programming-erlang/.eunit/*
 functional-programming-erlang/ebin/*
+*.dump

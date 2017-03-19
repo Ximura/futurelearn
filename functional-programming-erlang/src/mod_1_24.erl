@@ -10,7 +10,7 @@
 -author("Keyki").
 
 %% API
--export([perimeter/1, area/1, enclose/1]).
+-export([perimeter/1, area/1, enclose/1, bits/1]).
 
 %%
 % Perimeter
@@ -40,6 +40,13 @@ enclose({square, {A}}) -> {rectangle, {A, A}};
 enclose({triangle, {A, B, C} }) ->
   H = triangle_height(A, B, C),
   {rectangle, {H, B}}.
+
+%%
+% Bits
+%%
+bits(N) -> bits(N, 0).
+bits(0, A) -> A;
+bits(N, A) when N > 0 -> bits(N div 2, A + (N rem 2) ).
 
 
 %%
