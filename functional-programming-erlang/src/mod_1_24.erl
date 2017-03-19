@@ -10,7 +10,7 @@
 -author("Keyki").
 
 %% API
--export([perimeter/1, area/1]).
+-export([perimeter/1, area/1, enclose/1]).
 
 %%
 % Perimeter
@@ -28,6 +28,24 @@ area({circle, {R} }) -> math:pi() * R * R;
 area({rectangle, {A, B}}) -> A * B;
 area({square, {A}}) -> A * A;
 area({triangle, {A, B, C} }) ->
-  D = math:pow((B*B + C*C - A*A) / 2 * B, 2),
-  H = math:sqrt(C*C - D),
+  H = triangle_height(A, B, C),
   H * B / 2.
+
+%%
+% Enclose
+%%
+enclose({circle, {R} }) -> {rectangle, {2*R, 2*R}};
+enclose({rectangle, {A, B}}) -> {rectangle, {A, B}};
+enclose({square, {A}}) -> {rectangle, {A, A}};
+enclose({triangle, {A, B, C} }) ->
+  H = triangle_height(A, B, C),
+  {rectangle, {H, B}}.
+
+
+%%
+% Helpers
+%%
+
+triangle_height(A, B, C) ->
+  D = math:pow((B*B + C*C - A*A) / 2 * B, 2),
+  math:sqrt(C*C - D).

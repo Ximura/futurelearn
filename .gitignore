@@ -48,3 +48,7 @@ Temporary Items
 functional-programming-erlang/.idea/*
 functional-programming-erlang/*.iml
 futurelearn/futurelearn/.idea/workspace.xml
+*.beam
+functional-programming-erlang/.rebar/*
+functional-programming-erlang/.eunit/*
+functional-programming-erlang/ebin/*

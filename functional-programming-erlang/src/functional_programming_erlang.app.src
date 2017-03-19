@@ -1,0 +1,12 @@
+{application, functional_programming_erlang,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { mod_1_24, []}},
+  {env, []}
+ ]}.
