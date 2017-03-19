@@ -54,5 +54,5 @@ bits(N, A) when N > 0 -> bits(N div 2, A + (N rem 2) ).
 %%
 
 triangle_height(A, B, C) ->
-  D = math:pow((B*B + C*C - A*A) / 2 * B, 2),
+  D = math:pow((B*B + C*C - A*A) / (2 * B), 2),
   math:sqrt(C*C - D).
